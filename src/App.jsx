@@ -28,6 +28,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
   
+  
 
   useEffect(() => {
     if (!query) {
@@ -64,11 +65,16 @@ function App() {
 
   const loadMore = () => setPage((prevPage) => prevPage + 1);
   
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+
   return (
     <div>
       <SearchBar onSubmit={handleSearch} />
       {error && <ErrorMessage message={error} />}
-      <ImageGallery images={images} />
+      <ImageGallery images={images} onImageClick={handleImageClick}/>
       {loading && <Loader />}
       {images.length > 0 && !loading && <LoadMoreBtn onClick={loadMore} />}
       {selectedImage && (
