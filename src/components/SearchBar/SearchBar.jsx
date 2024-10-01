@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import styles from './SearchBar.module.css';
 
 
 export default function SearchBar({ onSubmit }) {
@@ -14,9 +15,9 @@ export default function SearchBar({ onSubmit }) {
     setQuery("");
   };
     return (
-        <header>
-            <form onSubmit = {handleSubmit}>
-                <input
+        <header className={styles.Searchbar}>
+            <form  className={styles.SearchForm} onSubmit = {handleSubmit}>
+                <input className="SearchForm-input "
                     type="text"
                     value = {query}
                     onChange={(e) => setQuery(e.target.value)}

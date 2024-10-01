@@ -1,12 +1,4 @@
 .modal {
-  height: 70% !important;
-  background-color: black !important;
-
-  justify-content: center !important;
-  align-items: center;
-}
-.modal img {
-  height: 70% !important;
-  width: 70% !important;
-  background-color: black !important;
+  height: 50%;
+  width: 50%;
 }
